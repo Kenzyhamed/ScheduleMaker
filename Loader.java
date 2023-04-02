@@ -1,4 +1,6 @@
-public class Loader throws SQLException{
+import java.sql.*;
+import java.util.*;
+public class Loader {
     /*
     this class loads  the sql database and puts each block of data into a hash map in the form of the <Integer, String[]>
     the integer part is the id and the rest are stored in the string list
@@ -7,51 +9,51 @@ public class Loader throws SQLException{
     all hashmaps are public so we can use them along the classes and in the end it calls treatement()
 
      */
-    String url = "jdbc:mysql://localhost:3306/EWR"; //replace "EWR" w/ the name of your MySQL database
-    String user = "your_username"; //replace w/ username
-    String password = "your_password"; //replace w/ password
+        String url="jdbc:mysql://localhost:3306/treatments";
+        String user="oop";
+        String password="password";
 
-    HashMap<Integer, String[]> animalTreatments = new HashMap<Integer, String[]>();
+        HashMap<Integer, String[]> animalTreatments=new HashMap<Integer, String[]>();
 
-    try {
-        Connection connection = DriverManager.getConnection(url, user, password);
+        try{
+        Connection connection= DriverManager.getConnection(url,user,password);
 
-        Statement statement = connection.createStatement();
-        ResultSet animalIds = statement.executeQuery("SELECT AnimalID FROM ANIMAL");
+        Statement statement=connection.createStatement();
+        ResultSet animalIds=statement.executeQuery("SELECT AnimalID FROM ANIMAL");
 
-        while (animalIds.next()) {
-            int animalId = animalIds.getInt("AnimalID");
+        while(animalIds.next()){
+        int animalId=animalIds.getInt("AnimalID");
 
-            String[] animalTreatmentValues = new String[6];
-            PreparedStatement preparedStatement = connection.prepareStatement(
-                    "SELECT AnimalNickname, AnimalSpecies, Description, Duration, MaxWindow, StartHour " +
-                            "FROM ANIMALS a " +
-                            "JOIN TREATMENTS t ON a.AnimalID = t.AnimalID " +
-                            "JOIN TASKS ts ON t.TaskID = ts.TaskID " +
-                            "WHERE a.AnimalID = ?");
-            preparedStatement.setInt(1, animalId);
+        String[]animalTreatmentValues=new String[6];
+        PreparedStatement preparedStatement=connection.prepareStatement(
+        "SELECT AnimalNickname, AnimalSpecies, Description, Duration, MaxWindow, StartHour "+
+        "FROM ANIMALS a "+
+        "JOIN TREATMENTS t ON a.AnimalID = t.AnimalID "+
+        "JOIN TASKS ts ON t.TaskID = ts.TaskID "+
+        "WHERE a.AnimalID = ?");
+        preparedStatement.setInt(1,animalId);
 
-            ResultSet animalTreatmentResultSet = preparedStatement.executeQuery();
-            if (animalTreatmentResultSet.next()) {
-                animalTreatmentValues[0] = animalTreatmentResultSet.getString("AnimalNickname");
-                animalTreatmentValues[1] = animalTreatmentResultSet.getString("AnimalSpecies");
-                animalTreatmentValues[2] = animalTreatmentResultSet.getString("Description");
-                animalTreatmentValues[3] = Integer.toString(animalTreatmentResultSet.getInt("Duration"));
-                animalTreatmentValues[4] = Integer.toString(animalTreatmentResultSet.getInt("MaxWindow"));
-                animalTreatmentValues[5] = Integer.toString(animalTreatmentResultSet.getInt("StartHour"));
-            }
+        ResultSet animalTreatmentResultSet=preparedStatement.executeQuery();
+        if(animalTreatmentResultSet.next()){
+        animalTreatmentValues[0]=animalTreatmentResultSet.getString("AnimalNickname");
+        animalTreatmentValues[1]=animalTreatmentResultSet.getString("AnimalSpecies");
+        animalTreatmentValues[2]=animalTreatmentResultSet.getString("Description");
+        animalTreatmentValues[3]=Integer.toString(animalTreatmentResultSet.getInt("Duration"));
+        animalTreatmentValues[4]=Integer.toString(animalTreatmentResultSet.getInt("MaxWindow"));
+        animalTreatmentValues[5]=Integer.toString(animalTreatmentResultSet.getInt("StartHour"));
+        }
 
-            animalTreatments.put(animalId, animalTreatmentValues);
+        animalTreatments.put(animalId,animalTreatmentValues);
         }
 
         connection.close();
 
-    } catch (SQLException e) {
+        }
+        catch(SQLException e){
         System.err.println("Connection failed.");
         e.printStackTrace();
-    }
+        }
 
 
-      
-      
+
 }
