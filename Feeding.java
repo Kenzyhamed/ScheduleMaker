@@ -19,27 +19,24 @@ minutes to clean each cage
          */
 
     }
-    public Integer feedingCrepuscular()
+    public Integer                                                                   feedingCrepuscular()
     {
-/*
-Crepuscular animals are fed in a 3-hour window starting at 7 PM (19).
-
-
-
-Coyotes are crepuscular. Each takes 5 minutes to feed and the feeding preparation time is 10
-minutes. It takes 5 minutes to clean each cage.
-
- Porcupines are crepuscular. Each takes 5 minutes to feed with no preparation time. It takes 10
-minutes to clean each cage.
- */
+// Crepuscular animals are fed in a 3-hour window starting at 7 PM (19).
+//
+//
+//
+// Coyotes are crepuscular. Each takes 5 minutes to feed and the feeding preparation time is 10
+// minutes. It takes 5 minutes to clean each cage.
+//
+//  Porcupines are crepuscular. Each takes 5 minutes to feed with no preparation time. It takes 10
+// minutes to clean each cage.
     }
-    public Integer feedingDiurnal()
-    {
+    public Integer feedingDiurnal() {
+    }
 /*
 Diurnal animals are fed in a 3-hour window starting at 8 AM (8).
 
 Beavers are diurnal. Each takes 5 minutes to feed with no preparation time. It takes 5 minutes
 to clean each cage.
  */
-    }
 }
