@@ -1,32 +1,26 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Animals {
 
-    private Integer AnimalID;
-    private String AnimalNickname;
-    private String AnimalSpecies;
+    private HashMap<Integer, String[]> animals= new HashMap<Integer, String[]>();
 
-    public Integer getAnimalID(){
-        return AnimalID;
+
+
+
+    public Animals(HashMap<Integer, String[]> original){
+        for (Integer treatID : original.keySet()) {
+            this.animals.put(treatID, original.get(treatID));
+
+
+    }}
+
+    public HashMap<Integer, String[]> getAnimals(){
+        return animals;
     }
 
-    public String getAnimalNickname(){
-        return AnimalNickname;
-    }
 
-    public String getAnimalSpecies(){
-        return AnimalSpecies;
-    }
 
-    public void setAnimalID(Integer anID){
-        this.AnimalID=anID;
 
-    }
 
-    public void setAnimalNickname(String anNick){
-        this.AnimalNickname=anNick;
-    }
-
-    public void setAnimalSpecies(String anSpec){
-        this.AnimalSpecies=anSpec;
-
-    }
 }
