@@ -9,7 +9,8 @@ public class FormatSchedule {
 
     public FormatSchedule(){
         try{
-            File file = new File("schedule.txt");
+
+
             FileWriter f = new FileWriter("schedule.txt");
             for(Node node: Time.getTime()){
                 int after=node.getData() % 100;
