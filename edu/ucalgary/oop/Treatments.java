@@ -24,11 +24,12 @@ public class Treatments{
     public Treatments( LinkedHashMap<Integer, ArrayList<String>> original){
         orderTreatments(original);
         for (Integer entry : orderedTreatments.keySet()) {
-            int taskid= Integer.parseInt(orderedTreatments.get(entry).get(0));
-            int startHour = Integer.parseInt(orderedTreatments.get(entry).get(1));
-            Treatment treatmentInfo =new Treatment(entry, taskid,startHour);
+            int taskid= Integer.parseInt(orderedTreatments.get(entry).get(1));
+            int startHour = Integer.parseInt(orderedTreatments.get(entry).get(2));
+            int animalid = Integer.parseInt(orderedTreatments.get(entry).get(0));
+            Treatment treatmentInfo =new Treatment(animalid, taskid,startHour);
             treatments.add(treatmentInfo);}
-        }
+}
     //Getters//
     public static LinkedHashMap<Integer, ArrayList<String>> getOrderedTreatments(){return orderedTreatments;}
 
@@ -41,9 +42,15 @@ public class Treatments{
 
         for (Integer id : Tasks.getOrderedTasks().keySet()){
             for(Integer key : origin.keySet()){
-                if(key == id){
+                if(Integer.parseInt(origin.get(key).get(1)) == id){
                     orderedTreatments.put(key,origin.get(key));
-                    break;}}}}
+
+                }
+            }
+        }
+
+
+    }
 
 
 

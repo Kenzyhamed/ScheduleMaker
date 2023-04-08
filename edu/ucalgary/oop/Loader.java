@@ -32,10 +32,13 @@ public class Loader{
         sqlLoad.selectTreatments();
         sqlLoad.close();
 
+
+
         ScheduleMaker schedule = new ScheduleMaker(treatments,tasks, animals);
-        ScheduleFeeding feed = new ScheduleFeeding();
         ScheduleTasks task = new ScheduleTasks();
+        ScheduleFeeding feed = new ScheduleFeeding();
         ScheduleCleaningCage cleancage = new ScheduleCleaningCage();
+        schedule.ScheduleVolunteer();
         FormatSchedule fom = new FormatSchedule();
 
 
@@ -110,12 +113,15 @@ public class Loader{
         try {
             Statement myStmt = dbConnect.createStatement();
             results = myStmt.executeQuery("SELECT * FROM TREATMENTS");
-
+            Integer i=0;
             while (results.next()){
+                i++;
                 ArrayList<String> other=new ArrayList<String>();
+                other.add(results.getString("AnimalID"));
                 other.add(results.getString("TaskID"));
                 other.add(results.getString("StartHour"));
-                treatments.put(Integer.parseInt(results.getString("AnimalID")), other);
+
+                treatments.put(i, other);
 
             }
 

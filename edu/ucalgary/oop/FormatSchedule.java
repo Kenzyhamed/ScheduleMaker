@@ -12,18 +12,23 @@ public class FormatSchedule {
 
 
             FileWriter f = new FileWriter("schedule.txt");
+
             for(Node node: Time.getTime()){
-                int after=node.getData() % 100;
+
                 int before =node.getData() / 100;
-                f.write( before+ ":"+after);
+                f.write( before+ ":00 \n");
+                String current="";
                 if(node.getVolunteer()==true){
                     f.write("[+ backup volunteer]");
                 }
                 f.write("\n");
-                f.write("* " );
+
+
+
 
 
             }
+            f.close();
         }catch (IOException e) {
             throw new RuntimeException(e);
         }

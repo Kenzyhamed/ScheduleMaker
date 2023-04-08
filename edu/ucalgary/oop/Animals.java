@@ -17,8 +17,8 @@ public class Animals {
             String nickname = original.get(entry).get(0);
             String type = original.get(entry).get(1);
             String species = DetermineSpecies(type);
-            boolean orphan = isOrphan(entry);
-            Animal animalInfo =new Animal(entry, nickname,type, species, orphan);
+
+            Animal animalInfo =new Animal(entry, nickname,type, species);
             animals.add(animalInfo);
         }
 
@@ -40,15 +40,7 @@ public class Animals {
 
     }
 
-    public boolean isOrphan( Integer Orphan){
-        if (Treatments.getOrderedTreatments().containsKey(Orphan)){
-            return true;
-        }
-        else{
-            return false;
-        }
 
-    }
 
 
 
