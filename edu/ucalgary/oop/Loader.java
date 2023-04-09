@@ -37,7 +37,7 @@ public class Loader{
         ScheduleMaker schedule = new ScheduleMaker(treatments,tasks, animals);
         ScheduleTasks task = new ScheduleTasks();
         ScheduleFeeding feed = new ScheduleFeeding();
-        ScheduleCleaningCage cleancage = new ScheduleCleaningCage();
+        ScheduleCleaningCage cleanCage = new ScheduleCleaningCage();
         schedule.ScheduleVolunteer();
         FormatSchedule fom = new FormatSchedule();
 

@@ -31,7 +31,7 @@ public class ScheduleFeeding extends ScheduleMaker{
                 }
 
             }
-             else if(animal.getAnimalType().equals("racoon")){
+            else if(animal.getAnimalType().equals("racoon")){
                 if(!animal.getOrphan()){
                     racoon.add(animal);
                 }
@@ -58,7 +58,6 @@ public class ScheduleFeeding extends ScheduleMaker{
         feedRacoons();
         feedCoyotes();
         feedPorcupine();
-
 
     }
 
@@ -111,7 +110,7 @@ public class ScheduleFeeding extends ScheduleMaker{
                             animalToFeed= new String[delete];
                             for(Animal type: animalTemp){
                                 if(amountAnimals!=0 && type !=null) {
-                                    animalToFeed[delete-1] = type.getAnimalNickname();
+                                    animalToFeed[amountAnimals-1] = type.getAnimalNickname();
                                     amountAnimals -= 1;
                                 }
                             }
@@ -119,7 +118,7 @@ public class ScheduleFeeding extends ScheduleMaker{
                             for(int i =0; i<delete; i++){
                                     animalTemp.set(i, null);
                             }
-                            String filling = "Feeding (" + animalToFeed.length + ":" + animalToFeed + ")";
+                            String filling = "Feeding - " + match + " (" + animalToFeed.length + ":" +  String.join(",", animalToFeed) + ")";
                             fill( node,duration, filling);
                         }
 
@@ -128,7 +127,6 @@ public class ScheduleFeeding extends ScheduleMaker{
                         strtHour += 1;
                         maxWin = -1;}
                     else {ScheduleCantBeMade error= new ScheduleCantBeMade();}
-
                     }
                 }
 
@@ -146,4 +144,6 @@ public class ScheduleFeeding extends ScheduleMaker{
             }
         }
         return amount;
-    }}
+    }
+
+}
