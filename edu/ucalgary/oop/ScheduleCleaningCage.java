@@ -1,8 +1,7 @@
 package edu.ucalgary.oop;
 
 public class ScheduleCleaningCage extends ScheduleMaker {
-    public int OTHER_DURATION=5;
-    public int PORCUPINE_DURATION=10;
+
 
     public ScheduleCleaningCage() {
         ScheduleMaker clean = new ScheduleMaker();

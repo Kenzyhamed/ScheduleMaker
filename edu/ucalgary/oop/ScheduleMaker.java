@@ -38,20 +38,13 @@ public class ScheduleMaker {
                 if (containsNull(node.getActivities())) {
                     if (amount >= duration) {
                         String filling = description + " (" + animalName + ")";
-                        for (int i = 0; i < node.activities.length; i++) {
-                            if (node.activities[i] == null && (duration != 0)) {
-
-                                node.activities[i] = filling;
-                                System.out.println(node.activities[i]);
-                                duration -= 1;
-                            }
-                        }
+                        fill(node, duration, filling);
                     }
                     break;
-                }else if (maxWin > 1) {
-                    startHr += 1;
+                }else if (maxWin > 1 ) {
+                    startHr += 100;
                     maxWin = -1;}
-                else {//ScheduleCantBeMade("Task Id:for animal(s) Animals.getAnimals().get(anid).get(1) doesnt fit in the schedule");}}
+                else {ScheduleCantBeMade error = new ScheduleCantBeMade();
 
             }
 
@@ -84,6 +77,16 @@ public class ScheduleMaker {
             }
             if (count > 60) {
                 node.setVolunteer(true);
+            }
+        }
+    }
+
+    public void fill(Node node, int duration, String filling){
+        for (int i = 0; i < node.activities.length; i++) {
+            if (node.activities[i] == null && (duration != 0)) {
+                node.activities[i] = filling;
+                System.out.println(node.activities[i]);
+                duration -= 1;
             }
         }
     }
