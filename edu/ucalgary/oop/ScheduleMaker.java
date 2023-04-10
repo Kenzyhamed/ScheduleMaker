@@ -13,19 +13,13 @@ public class ScheduleMaker {
 
     int amount;
 
-    public ScheduleMaker() {
-
-    }
+    public ScheduleMaker() {}
 
     public ScheduleMaker(LinkedHashMap<Integer, ArrayList<String>> treat, LinkedHashMap<Integer, ArrayList<String>> task, LinkedHashMap<Integer, ArrayList<String>> animal) {
         hoursInDay = new Time();
         animals = new Animals(animal);
         tasks = new Tasks(task);
         treatments = new Treatments(treat);
-
-
-
-
     }
 
     public void scheduleTasks(int strthr, int durat, int mxW, String name, String desc) {
@@ -36,76 +30,21 @@ public class ScheduleMaker {
         String animalName = name;
         for (Node node : Time.getTime()) {
             if (startHr == node.getData()) {
-                if (containsNull(node.getActivities())) {
-                    if (amount >= duration) {
-                        String filling = description + " (" + animalName + ")";
-                        fill(node, duration, filling);
-                    }
-                    break;
+                if (containsNull(node.getActivities()) && amount >= duration) {
+                    String filling = description + " (" + animalName + ")";
+                    fill(node, duration, filling);
+
                 }else if (maxWin > 1 ) {
                     startHr += 100;
                     maxWin = -1;}
                 else {ScheduleCantBeMade error = new ScheduleCantBeMade();
 
             }
-
-
             }
         }
     }
 
-   /* public void scheduleCleanNFeed(LinkedList<Animal> animalTemp, int strtHour , int Dur, int prepTime, String match, int maxWin, char indicator){
-        if(!animalTemp.isEmpty()){
-            for(AnimalTypes animal:AnimalTypes.values()){
-                if(animal.toString().equals(match)){
-                    if(indicator == 'F'){
-                        Dur = animal.getFeedingDuration();
-                        strtHour = animal.getFeedingStrtHr();
-                        prepTime = animal.getPrepTime();
-                    }
-                    else if(indicator == 'C'){
-                        Dur=animal.getCleaningDuration();
-                    }
 
-
-                }
-            }
-            int amountAnimals=0;
-            String[] animalToFeed;
-            for(Node node: Time.getTime()){
-                if (strtHour == node.getData()){
-                    if (containsNull(node.getActivities())) {
-                        amountAnimals=(amount-prepTime)/Dur;
-                        if(amountAnimals>animalTemp.size()){
-                            amountAnimals=animalTemp.size();}
-                        int duration= prepTime+ (amountAnimals*Dur);
-                        if (amount >= duration) {
-                            int delete =amountAnimals;
-                            animalToFeed= new String[delete];
-                            for(Animal type: animalTemp){
-                                if(amountAnimals!=0 && type !=null) {
-                                    animalToFeed[delete-1] = type.getAnimalNickname();
-                                    amountAnimals -= 1;
-                                }
-                            }
-
-                            for(int i =0; i<delete; i++){
-                                animalTemp.set(i, null);
-                            }
-                            String filling = "Feeding - " + match + " (" + animalToFeed.length + ":" +  String.join(",", animalToFeed) + ")";
-                            fill( node,duration, filling);
-                        }
-
-                    }
-                    else if (maxWin > 1) {
-                        strtHour += 1;
-                        maxWin = -1;}
-                    else {ScheduleCantBeMade error= new ScheduleCantBeMade();}
-                }
-            }
-
-        }
-    }*/
 
 
     public boolean containsNull(String[] values) {
