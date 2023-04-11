@@ -16,6 +16,7 @@ public class ScheduleCleaningCage extends ScheduleMaker {
 
     }
     public void cleanRacoons(){
+
         cleanTemplate(racoon,"racoon");
 
     }

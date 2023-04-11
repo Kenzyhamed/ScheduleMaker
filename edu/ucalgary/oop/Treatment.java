@@ -1,7 +1,7 @@
 package edu.ucalgary.oop;
 
-import java.util.ArrayList;
-import java.util.stream.IntStream;
+
+
 
 /**
  * @author Kenzy Hamed 30140355
@@ -26,14 +26,13 @@ public class Treatment {
 
     public Treatment(int anID, int  tasID, int strthr, int treatID) {
         /**
-         *This is the Treatment constructor that creates a treatment object but first checks
-         *if the there are any invalid inputs. It checks to see if the animal and task id is in order
-         *compared to the already existing animal objects. It checks the start hour as well to see if it is between 0 and 24
-         *If all is valid it creates the object and assigns all the inputs to the variables associated with the treatment object.
+         *This is the Treatment constructor that creates a treatment objects using the parameters that have been passed in
+         * it also obtains the animal and task info associated with the task.
          *
          * @param anID the ID of the animal receiving the treatment
          * @param tasID the ID of the task associated with the treatment
          * @param strthr the start hour of the treatment
+         * @param treatID the treatment ID
          */
 
 

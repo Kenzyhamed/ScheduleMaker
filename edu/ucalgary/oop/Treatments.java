@@ -11,9 +11,7 @@ import java.util.*;
  *
  */
 public class Treatments{
-    /*
-    orders all treatments based on less flexible -MaxWindow
-     */
+
 
     //Variables//
     private static  LinkedList<Treatment> treatments= new LinkedList<Treatment>();
@@ -25,7 +23,13 @@ public class Treatments{
     //Constructors//
 
     public Treatments( LinkedHashMap<Integer, ArrayList<String>> original){
-
+        /**
+         * Creates an instance of Treatments by first passing the original HashMap into orderTreatments to get ordered then iterating over an Ordered HashMap of treatment information and creating
+         * a list of treatment objects for each entry of the Hashmap, with the key/Integer being the /treatment ID, the first index of the
+         * Arraylist being the animalID, the second being the TaskID, and the third is the StartHour. Then adds the object created into a treatments linked list.
+         *
+         * @param original a HashMap<Integer,ArrayList<String>> containing information about all the treatments in the SQL Treatments table
+         */
 
         orderTreatments(original);
         for (Integer entry : orderedTreatments.keySet()) {

@@ -1,39 +1,10 @@
-/*package edu.ucalgary.oop;
+package edu.ucalgary.oop;
 import org.junit.*;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 public class AnimalTest {
-
-    @Test
-    public void testMakeNewAnimalAllRight() {
-
-        Animal animal = new Animal(16, "Pongo", "coyote", "crepuscular");
-        assertEquals(16, animal.getAnimalID());
-        assertEquals("Pongo", animal.getAnimalNickname());
-        assertEquals("coyote", animal.getAnimalType());
-        assertEquals("crepuscular", animal.getAnimalSpecies());
-        assertFalse(animal.getOrphan());
-
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testConstructorInvalidType() {
-        Animal animal = new Animal(16, "Pongo", "fish", "crepuscular");
-    }
-
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testConstructorInvalidSpecies() {
-        Animal animal = new Animal(16, "Pongo", "coyote", "cathemeral");
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testConstructorInvalidID() {
-        Animal animal = new Animal(-100, "Pongo", "fish", "crepuscular");
-    }
-
 
     @Test
     public void testGetAnimalID() {
@@ -81,4 +52,4 @@ public class AnimalTest {
         Treatments.getOrderedTreatments().put(31, addTreatment);
         assertEquals(false, animal.getOrphan());
     }
-}*/
+}

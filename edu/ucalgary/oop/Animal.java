@@ -25,20 +25,15 @@ public class Animal {
     public boolean orphan;
 
 
-    public Animal(int iD, String  nickname, String type, String species) throws IllegalArgumentException {
+    public Animal(int iD, String  nickname, String type, String species) {
         /**
-         * This is the Animal constructor that creates an Animal object but first checks
-         * if the there are any invalid inputs. It checks to see if the id is in order
-         * compared to the already existing animal objects. It checks the type and species according to valid type/species
-         * in the AnimalTypes enum, which contains all the acceptable animal types and animal species.
-         * If all is valid it creates the object and assigns all the inputs to the variables associated with the animal object.
+         * This is the Animal constructor that creates an Animal object
          * It calls getOrphan which checks to see if the animal is an orphan.
          *
          * @param iD id of the animal, type is integer
          * @param nickname name of animal, type is string
          * @param type type of the animal, type is string
          * @param species the behavioural species of the animal, type id string
-         * @throws IllegalArgumentException if id, species, and type is invalid it throws the error and doesn't create the animal object
          *
          */
 

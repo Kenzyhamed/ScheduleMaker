@@ -1,15 +1,15 @@
 
 package edu.ucalgary.oop;
+import java.awt.*;
+import java.io.IOException;
 import java.util.*;
 import java.sql.*;
 
 /**
-this class loads  the sql database and puts each block of data into a hash map in the form of the <Integer, String[]>
-the integer part is the id and the rest are stored in the string list
-this is where the program starts main()!
-all hashmaps are public so we can use them along the classes and in the end it calls treatement()
+this Loader class loads  the sql database and puts each block of data into a hash map in the form of the <Integer, String[]>
+the integer part is the id and the rest are stored in the string list this is where the program starts.
 @author     Kenzy Hamed UCID 30140355
-@version    1.4
+@version    1.8
 @since      1.0
  */
 
@@ -24,7 +24,14 @@ public class Loader{
     private static LinkedHashMap<Integer, ArrayList<String>> animals= new LinkedHashMap<Integer, ArrayList<String>>();
     private static LinkedHashMap<Integer, ArrayList<String>> tasks= new LinkedHashMap<Integer, ArrayList<String>>();
 
-    public static void main(String[] args){ //added main()
+    public static void main(String[] args){
+
+        /**
+         * This is the main function that connects to the database and retrieves all of the information then makes a new object of
+         * the class schedule maker and passes in all the linked hashmaps, it also makes objects out of Schedule feeding/cleaning cage/tasks
+         * so that they are put in the schedule, then it determines if there are volunteers needed by calling the schedule volunteer function in schedule maker
+         * abd finally calls format schedule so that a file with the schedule can be created.
+         */
         Loader sqlLoad = new Loader();
 
         sqlLoad.createConnection();
@@ -49,10 +56,16 @@ public class Loader{
     }
 
     public void Loader(){
+        /**
+         * Default constructor doesn't do anything, just used to restart program without exiting
+         */
 
     }
 
     public static void createConnection(){
+        /**
+         * creates connection to database
+         */
 
         try{
 
@@ -62,6 +75,12 @@ public class Loader{
         }
     }
     public static void  updateTask(int treatID, String newStartHr){
+        /**
+         * updates sql databases based on parameters passed to metjod
+         * @param treatID treatment id that needs to be updated
+         *
+         * @param newStartHR start hour that user inouts to change
+         */
         try {
             createConnection();
             Statement myStmt = dbConnect.createStatement();
@@ -78,6 +97,10 @@ public class Loader{
     }
 
     public  LinkedHashMap<Integer, ArrayList<String>> selectTasks(){
+        /**
+         * retrieves tasks from sql table and puts it in linked hashmap
+         * @returns tasks type LinkedHashMap<Integer, ArrayList<String>>
+         */
 
         try {
             Statement myStmt = dbConnect.createStatement();
@@ -101,6 +124,10 @@ public class Loader{
 
 
     public  LinkedHashMap<Integer, ArrayList<String>> selectAnimals(){
+        /**
+         * retrieves animals from sql table and puts it in linked hashmap
+         * @returns animals type LinkedHashMap<Integer, ArrayList<String>>
+         */
 
         try {
             Statement myStmt = dbConnect.createStatement();
@@ -122,6 +149,10 @@ public class Loader{
     }
 
     public  LinkedHashMap<Integer, ArrayList<String>> selectTreatments(){
+        /**
+         * retrieves treatments from sql table and puts it in linked hashmap
+         * @returns treatments type LinkedHashMap<Integer, ArrayList<String>>
+         */
 
         try {
             Statement myStmt = dbConnect.createStatement();
@@ -146,6 +177,9 @@ public class Loader{
     }
 
     public void close() {
+        /**
+         * closes sql database access
+         */
         try {
             results.close();
             dbConnect.close();
