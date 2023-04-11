@@ -24,6 +24,7 @@ public class Loader{
     private static LinkedHashMap<Integer, ArrayList<String>> tasks= new LinkedHashMap<Integer, ArrayList<String>>();
 
     public static void main(String[] args){ //added main()
+
         Loader sqlLoad = new Loader();
 
         sqlLoad.createConnection();
@@ -40,6 +41,8 @@ public class Loader{
         ScheduleCleaningCage cleanCage = new ScheduleCleaningCage();
         schedule.ScheduleVolunteer();
         FormatSchedule fom = new FormatSchedule();
+
+        GUIScheduleMade x = new GUIScheduleMade();
 
 
 
