@@ -3,6 +3,7 @@ package edu.ucalgary.oop;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class ScheduleMaker {
     private Treatments treatments;
@@ -22,7 +23,7 @@ public class ScheduleMaker {
         treatments = new Treatments(treat);
     }
 
-    public void scheduleTasks(int strthr, int durat, int mxW, String name, String desc) {
+    public void scheduleTasks(int strthr, int durat, int mxW, String name, String desc, int treatID) {
         int startHr = strthr;
         int maxWin = mxW;
         int duration = durat;
@@ -37,11 +38,23 @@ public class ScheduleMaker {
                 }else if (maxWin > 1 ) {
                     startHr += 100;
                     maxWin = -1;}
-                else {ScheduleCantBeMade error = new ScheduleCantBeMade();
+                else {
+
+                    Scanner reader = new Scanner(System.in);  // Reading from System.in
+                    System.out.println(description + " for "+ name + " can't be put in the schedule due to too many duties in hour " + strthr + ". Please choose a different start time (0-23): ");
+                    int newStarthour = reader.nextInt();
+                    while(newStarthour<0 || newStarthour>=24){
+                        System.out.println("Please input an integer value between and including 0-23, do not include am or pm: ");
+                        newStarthour = reader.nextInt();
+                    }
+
+                    ScheduleCantBeMade error = new ScheduleCantBeMade(treatID,String.valueOf(newStarthour));
 
             }
             }
         }
+
+
     }
 
 

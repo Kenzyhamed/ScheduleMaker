@@ -37,7 +37,7 @@ public class Animals {
     public static LinkedList<Animal> getAnimals(){
         /**
          * Gets the animals linked list.
-         * @return animals that is associated with the object it was called from, type is String
+         * @return animals that is associated with the object it was called from, type is LinkedList<Animal>
          */
         return animals;
     }

@@ -126,7 +126,6 @@ public class ScheduleFeeding extends ScheduleMaker{
                     else if (maxWin > 1) {
                         strtHour += 1;
                         maxWin = -1;}
-                    else {ScheduleCantBeMade error= new ScheduleCantBeMade();}
                     }
                 }
 

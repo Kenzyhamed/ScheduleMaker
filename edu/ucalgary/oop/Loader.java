@@ -17,8 +17,9 @@ all hashmaps are public so we can use them along the classes and in the end it c
 
 
 public class Loader{
-    private Connection dbConnect;
-    private ResultSet results;
+    private static Connection dbConnect;
+    private static ResultSet results;
+    private static PreparedStatement p = null;
     private static LinkedHashMap<Integer, ArrayList<String>> treatments= new LinkedHashMap<Integer, ArrayList<String>>();
     private static LinkedHashMap<Integer, ArrayList<String>> animals= new LinkedHashMap<Integer, ArrayList<String>>();
     private static LinkedHashMap<Integer, ArrayList<String>> tasks= new LinkedHashMap<Integer, ArrayList<String>>();
@@ -51,7 +52,7 @@ public class Loader{
 
     }
 
-    public void createConnection(){
+    public static void createConnection(){
 
         try{
 
@@ -60,11 +61,23 @@ public class Loader{
             e.printStackTrace();
         }
     }
+    public static void  updateTask(int treatID, String newStartHr){
+        try {
+            createConnection();
+            Statement myStmt = dbConnect.createStatement();
+            results = myStmt.executeQuery("SELECT * FROM TREATMENTS");
+
+            String update="update treatments set StartHour=" + newStartHr + " where TreatmentID=" + treatID;
+            p = dbConnect.prepareStatement(update);
+            p.execute();
+            myStmt.close();
+            } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
     public  LinkedHashMap<Integer, ArrayList<String>> selectTasks(){
-
-
-
 
         try {
             Statement myStmt = dbConnect.createStatement();

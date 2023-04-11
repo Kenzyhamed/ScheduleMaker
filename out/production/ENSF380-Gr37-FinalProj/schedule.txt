@@ -27,7 +27,7 @@
 4:00  
 ----------------
 
- * Kit feeding (Annie, Oliver and Mowgli)
+***No duties scheduled for this hour.***
 
 5:00  
 ----------------
@@ -39,7 +39,6 @@
 
  * Administer antibiotics (Spike)
  * Flush neck wound (Spike)
- * Kit feeding (Annie, Oliver and Mowgli)
 
 7:00  
 ----------------
@@ -49,7 +48,7 @@
 8:00  
 ----------------
 
- * Kit feeding (Annie, Oliver and Mowgli)
+***No duties scheduled for this hour.***
 
 9:00  
 ----------------
@@ -59,7 +58,7 @@
 10:00  
 ----------------
 
- * Kit feeding (Annie, Oliver and Mowgli)
+***No duties scheduled for this hour.***
 
 11:00  
 ----------------
@@ -69,21 +68,16 @@
 12:00  
 ----------------
 
- * Kit feeding (Annie, Oliver and Mowgli)
+***No duties scheduled for this hour.***
 
 13:00  [+ backup volunteer]
 ----------------
 
  * Eyedrops (Biter)
+ * Kit feeding (Annie, Oliver and Mowgli)
  * Inspect broken leg (Biter)
- * Inspect broken leg (Spin)
- * Mange treatment (Spin)
- * Mange treatment (Spot)
- * Give vitamin injection (Bitter)
- * Give vitamin injection (Pencil)
- * Give vitamin injection (Eraser)
 
-14:00  
+14:00  [+ backup volunteer]
 ----------------
 
  * Kit feeding (Annie, Oliver and Mowgli)
@@ -91,12 +85,14 @@
 15:00  
 ----------------
 
+ * Inspect broken leg (Spin)
  * Apply burn ointment back (Shadow)
+ * Mange treatment (Spin)
 
 16:00  
 ----------------
 
- * Kit feeding (Annie, Oliver and Mowgli)
+***No duties scheduled for this hour.***
 
 17:00  
 ----------------

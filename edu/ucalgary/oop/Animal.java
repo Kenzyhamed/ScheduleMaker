@@ -14,10 +14,14 @@ import java.util.ArrayList;
 
 public class Animal {
 
-    private final int animalID;
-    public final String  animalNickname;
-    public final String animalType;
-    public final String animalSpecies;
+    private  int animalID;
+
+    public  String  animalNickname;
+
+    public  String animalType;
+
+    public  String animalSpecies;
+
     public boolean orphan;
 
 
@@ -39,36 +43,16 @@ public class Animal {
          */
 
 
-        try{
-            ArrayList<String> animalTypes = new ArrayList<String>();
-            ArrayList<String> animalSpecies = new ArrayList<String>();
-            for(AnimalTypes anType: AnimalTypes.values()){
-                animalTypes.add(anType.toString());
-            }
-            for(AnimalTypes anType: AnimalTypes.values()){
-                animalSpecies.add(anType.getType());
-            }
-            if(!animalTypes.contains(type)){
-                throw new IllegalArgumentException("Invalid animal type");
-            }
-            if(!animalSpecies.contains(species)){
-                throw new IllegalArgumentException("Invalid Species");
-            }
-            if(iD != Animals.getAnimals().toArray().length +1){
-                throw new IllegalArgumentException("ID is invalid");
-            }
 
 
-        }catch(IllegalArgumentException e){
-            System.out.println("Error: " + e.getMessage());
+            this.animalID = iD;
+            this.animalNickname = nickname;
+            this.animalType = type;
+            this.animalSpecies =species;
+            getOrphan();
 
-        }
 
-        this.animalID = iD;
-        this.animalNickname = nickname;
-        this.animalType = type;
-        this.animalSpecies =species;
-        getOrphan();
+
 
     }
 

@@ -1,9 +1,13 @@
 package edu.ucalgary.oop;
 
+
+
+
+
 public class ScheduleCantBeMade {
 
-    public ScheduleCantBeMade(){
-        System.out.println("cant fit");
+    public ScheduleCantBeMade(int treatID, String newStartHr){
+        Loader.updateTask(treatID, newStartHr);
+        Loader newSchedule = new Loader();
 
-    }
-}
+}}

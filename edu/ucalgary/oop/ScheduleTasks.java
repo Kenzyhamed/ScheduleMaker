@@ -8,7 +8,7 @@ public  class ScheduleTasks extends ScheduleMaker{
             Task task=entry.getTaskAssociated();
             Animal animal =entry.getAnimalassociated();
             ScheduleMaker putTask=new ScheduleMaker();
-            putTask.scheduleTasks(entry.getStartHour(), task.getDuration(), task.getMaxWin(), animal.getAnimalNickname(), task.getDescription());
+            putTask.scheduleTasks(entry.getStartHour(), task.getDuration(), task.getMaxWin(), animal.getAnimalNickname(), task.getDescription(), entry.getTreatmentID());
 
             }}
 
