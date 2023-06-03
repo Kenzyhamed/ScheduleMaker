@@ -1,7 +1,6 @@
 /* W23 Project Example Database
    2023 Barcomb
- 
- Each time this file is executed, it will reset the database to the original state defined below.
+   Each time this file is executed, it will reset the database to the original state defined below.
  
  */
 
