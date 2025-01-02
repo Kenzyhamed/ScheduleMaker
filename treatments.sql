@@ -1,9 +1,3 @@
-/* W23 Project Example Database
-   2023 Barcomb
-   Each time this file is executed, it will reset the database to the original state defined below.
- 
- */
-
 DROP DATABASE IF EXISTS EWR;
 CREATE DATABASE EWR; 
 USE EWR;
@@ -65,28 +59,20 @@ CREATE TABLE TREATMENTS (
 
 INSERT INTO TREATMENTS (AnimalID, TaskID, StartHour) VALUES
 (6, 1, 0),
-(6, 1, 0),
-(6, 1, 0),
-(6, 1, 0),
-(6, 1, 0),
-(6, 1, 0),
-(6, 1, 0),
-(6, 1, 0),
-(6, 1, 0),
 (6, 1, 18),
 (6, 1, 20),
-(6, 1, 22),
+(6, 1, 21),
 (1, 9, 22),
 (2, 10, 13),
 (2, 9, 13),
 (3, 7, 13),
 (4, 7, 13),
-(5, 7, 13),
+(5, 7, 12),
 (7, 2, 19),
 (8, 5, 6),
 (8, 4, 6),
-(8, 4, 18),
-(9, 9, 22),
+(8, 4, 0),
+(9, 9, 0),
 (10, 7, 23),
 (11, 8, 23),
 (12, 3, 15),

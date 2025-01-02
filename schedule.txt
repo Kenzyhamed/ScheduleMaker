@@ -3,12 +3,17 @@
 0:00  [+ backup volunteer]
 ----------------
 
+ * Administer antibiotics (Spike)
+ * Eyedrops (Javelin)
  * Kit feeding (Annie, Oliver and Mowgli)
+ * Feeding - fox (1:Slinky)
+ * Cleaning Cage - fox (2:Slinky,Annie, Oliver and Mowgli)
+ * Cleaning Cage - coyote (8:Spot,Spin,Boots,Eraser,Pencil,Bitter,Biter,Loner)
 
-1:00  [+ backup volunteer]
+1:00  
 ----------------
 
- * Kit feeding (Annie, Oliver and Mowgli)
+***No duties scheduled for this hour.***
 
 2:00  
 ----------------
@@ -64,7 +69,7 @@
 12:00  
 ----------------
 
-***No duties scheduled for this hour.***
+ * Give vitamin injection (Eraser)
 
 13:00  [+ backup volunteer]
 ----------------
@@ -76,7 +81,6 @@
  * Mange treatment (Spot)
  * Give vitamin injection (Bitter)
  * Give vitamin injection (Pencil)
- * Give vitamin injection (Eraser)
 
 14:00  
 ----------------
@@ -101,7 +105,6 @@
 18:00  
 ----------------
 
- * Administer antibiotics (Spike)
  * Kit feeding (Annie, Oliver and Mowgli)
 
 19:00  [+ backup volunteer]
@@ -119,15 +122,13 @@
 21:00  
 ----------------
 
-***No duties scheduled for this hour.***
+ * Kit feeding (Annie, Oliver and Mowgli)
 
-22:00  [+ backup volunteer]
+22:00  
 ----------------
 
  * Give fluid injection (Boots)
  * Eyedrops (Loner)
- * Eyedrops (Javelin)
- * Kit feeding (Annie, Oliver and Mowgli)
 
 23:00  
 ----------------
